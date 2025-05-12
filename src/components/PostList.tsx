@@ -32,7 +32,7 @@ const PostList = () => {
 
     return (
         <div className='postList'>
-            {error && <p>Error: {error}</p>}
+            {error && <p>Error: {error} </p>}
             {posts.length === 0 ? (
                 <p>Loading...</p>
             ) : (
