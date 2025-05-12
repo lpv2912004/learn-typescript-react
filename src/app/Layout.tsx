@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar/Navbar';
+import { ThemeProvider } from '@/context/ThemeProvider';
 import { Helmet } from 'react-helmet';
 
 const metadata = {
@@ -14,8 +15,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta name={metadata.title} content={metadata.description}></meta>
                 <head></head>
             </Helmet>
-            <Navbar />
-            <main>{children}</main>
+
+            <ThemeProvider>
+                <Navbar />
+                <main>{children}</main>
+            </ThemeProvider>
         </>
     );
 }
